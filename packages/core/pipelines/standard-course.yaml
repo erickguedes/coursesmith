@@ -1,0 +1,68 @@
+pipeline:
+  name: standard-course
+  version: 1.0.0
+  description: Complete course generation with web enrichment
+
+  steps:
+    - id: web-researcher
+      capability: research-topic
+      input: raw-source
+      output: research-material
+      config:
+        depth: thorough
+
+    - id: curriculum-architect
+      capability: design-curriculum
+      input:
+        - raw-source
+        - research-material
+      output: course-structure
+
+    - id: lesson-planner
+      capability: plan-lessons
+      input: course-structure
+      output: lesson-plan
+
+    - id: teacher
+      capability: generate-lesson
+      input: lesson-plan
+      output: lesson
+      config:
+        tone: professional
+        examples: 3
+
+    - id: content-enricher
+      capability: enrich-lesson
+      input:
+        - lesson
+        - research-material
+      output: enriched-lesson
+      config:
+        addReferences: true
+        addExternalExamples: true
+
+    - id: quiz-generator
+      capability: generate-quiz
+      input: lesson
+      output: quiz
+      config:
+        questionsPerLesson: 5
+
+    - id: flashcard-generator
+      capability: generate-flashcards
+      input: lesson
+      output: flashcards
+      config:
+        cardsPerLesson: 8
+
+    - id: publisher
+      capability: publish-markdown
+      input:
+        - course-structure
+        - lesson
+        - enriched-lesson
+        - quiz
+        - flashcards
+      output: generated-course
+      config:
+        format: markdown

@@ -1,0 +1,23 @@
+{
+  "name": "coursesmith",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "packages/core",
+    "packages/cli",
+    "plugins/web-research",
+    "plugins/teacher",
+    "plugins/quiz-generator",
+    "plugins/flashcard-generator",
+    "plugins/publisher"
+  ],
+  "scripts": {
+    "build": "npm run build --workspaces",
+    "dev": "npm run dev --workspaces --if-present",
+    "lint": "npm run lint --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

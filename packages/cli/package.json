@@ -1,0 +1,23 @@
+{
+  "name": "@coursesmith/cli",
+  "version": "1.0.0",
+  "type": "module",
+  "bin": {
+    "coursesmith": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch"
+  },
+  "dependencies": {
+    "@coursesmith/core": "^1.0.0",
+    "commander": "^13.0.0",
+    "chalk": "^5.4.0",
+    "inquirer": "^12.0.0",
+    "yaml": "^2.7.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.0",
+    "@types/node": "^22.0.0"
+  }
+}

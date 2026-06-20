@@ -1,0 +1,32 @@
+name: "@coursesmith/teacher"
+version: 1.0.0
+type: agent
+description: Generates lesson content from lesson plans and course structures
+capabilities:
+  - id: generate-lesson
+    version: "1.0"
+    description: Generates full lesson content from a lesson plan
+    input:
+      - type: lesson-plan
+        version: "1.x"
+    output:
+      - type: lesson
+        version: "1.0"
+  - id: design-curriculum
+    version: "1.0"
+    description: Designs course curriculum from raw source material
+    input:
+      - type: raw-source
+        version: "1.x"
+    output:
+      - type: course-structure
+        version: "1.0"
+  - id: plan-lessons
+    version: "1.0"
+    description: Creates lesson plans from course structure
+    input:
+      - type: course-structure
+        version: "1.x"
+    output:
+      - type: lesson-plan
+        version: "1.0"

@@ -1,0 +1,34 @@
+name: "@coursesmith/web-research"
+version: 1.0.0
+type: agent
+description: Web research agent that searches, scrapes, and enriches course content
+capabilities:
+  - id: research-topic
+    version: "1.0"
+    description: Researches a topic by searching the web and scraping relevant content
+    input:
+      - type: raw-source
+        version: "1.x"
+    output:
+      - type: research-material
+        version: "1.0"
+  - id: enrich-lesson
+    version: "1.0"
+    description: Enriches lesson content with external references and examples
+    input:
+      - type: lesson
+        version: "1.x"
+      - type: research-material
+        version: "1.x"
+    output:
+      - type: enriched-lesson
+        version: "1.0"
+  - id: enrich-syllabus
+    version: "1.0"
+    description: Enriches a raw syllabus with web research data
+    input:
+      - type: raw-source
+        version: "1.x"
+    output:
+      - type: enriched-syllabus
+        version: "1.0"

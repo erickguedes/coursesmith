@@ -1,0 +1,14 @@
+name: "@coursesmith/flashcard-generator"
+version: 1.0.0
+type: agent
+description: Generates flashcards from lesson content
+capabilities:
+  - id: generate-flashcards
+    version: "1.0"
+    description: Creates flashcards from lesson content
+    input:
+      - type: lesson
+        version: "1.x"
+    output:
+      - type: flashcards
+        version: "1.0"

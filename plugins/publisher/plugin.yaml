@@ -1,0 +1,22 @@
+name: "@coursesmith/publisher"
+version: 1.0.0
+type: publisher
+description: Publishes generated course artifacts to the filesystem
+capabilities:
+  - id: publish-markdown
+    version: "1.0"
+    description: Writes artifacts as Markdown files to the output directory
+    input:
+      - type: course-structure
+        version: "1.x"
+      - type: lesson
+        version: "1.x"
+      - type: enriched-lesson
+        version: "1.x"
+      - type: quiz
+        version: "1.x"
+      - type: flashcards
+        version: "1.x"
+    output:
+      - type: generated-course
+        version: "1.0"

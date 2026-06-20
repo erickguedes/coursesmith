@@ -1,0 +1,14 @@
+name: "@coursesmith/quiz-generator"
+version: 1.0.0
+type: agent
+description: Generates quiz questions from lesson content
+capabilities:
+  - id: generate-quiz
+    version: "1.0"
+    description: Creates quiz questions from lesson content
+    input:
+      - type: lesson
+        version: "1.x"
+    output:
+      - type: quiz
+        version: "1.0"

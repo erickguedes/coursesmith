@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.coursesmith/
+output/
+.env
+*.tsbuildinfo
+test-project/
