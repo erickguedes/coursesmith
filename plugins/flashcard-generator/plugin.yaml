@@ -1,4 +1,4 @@
-name: "@coursesmith/flashcard-generator"
+name: "coursesmith-flashcard-generator"
 version: 1.0.0
 type: agent
 description: Generates flashcards from lesson content

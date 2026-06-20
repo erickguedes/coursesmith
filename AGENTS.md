@@ -8,60 +8,55 @@ Then read the documents under `docs/` in numbered order (01 → 20).
 
 ## Project phase
 
-**Documentation phase.** No implementation code exists yet. This repository contains only specifications. The documentation *is* the source code. Treat it with the same rigor.
+**Implementation complete.** TypeScript packages under `packages/` (core + cli) and `plugins/` (teacher, quiz-generator, flashcard-generator, publisher, web-research). Documentation in `docs/` is the formal specification.
 
-## Existing docs status
+## Implementation summary
 
-| File | Status |
-|------|--------|
-| `01-vision.md` | Complete |
-| `02-business-case.md` | Empty — needs content |
-| `03-prd.md` | Complete |
-| `04-architecture.md` | Complete |
-| `05-domain-model.md` | Complete |
-| `06-agents.md` | Complete |
-| `07-skills.md` | Not created |
-| `08-pipelines.md` | Not created |
-| `09-artifacts.md` | Not created |
-| `10-plugin-api.md` | Empty — needs content |
-| `11-runtime.md` → `20-contributing.md` | Not created |
-| `AI_IMPLEMENTATION_GUIDE.md` | Complete (secondary reference) |
+- **Monorepo** with npm workspaces under `packages/` and `plugins/`
+- **Core** (`packages/core`): ArtifactBus, PluginRegistry, CapabilityResolver, PipelineEngine, config loader
+- **CLI** (`packages/cli`): `init` and `run` commands, plugin loader with builtin discovery
+- **Plugins** (6 total): web-research, teacher, quiz-generator, flashcard-generator, publisher
+- **Built-in pipeline**: `packages/core/pipelines/standard-course.yaml`
+- **All packages build** with `npm run build --workspaces`
+- **Pipeline tested** generating 137 artifacts from Docker syllabus
 
-## Documentation quality standard
+## npm publishing
 
-Every document must explain: **Purpose, Motivation, Responsibilities, Inputs, Outputs, Configuration, Examples, Contracts, Validation, Failure cases, Future extensions, Cross references.**
+| Package | Status |
+|---------|--------|
+| `coursesmith-core` | ⏳ Pending (2FA config blocked, see note) |
+| `coursesmith-cli` | ⏳ Pending |
+| `coursesmith-teacher` | ⏳ Pending |
+| `coursesmith-quiz-generator` | ⏳ Pending |
+| `coursesmith-flashcard-generator` | ⏳ Pending |
+| `coursesmith-web-research` | ⏳ Pending |
+| `coursesmith-publisher` | ⏳ Pending |
 
-Never leave the reader guessing.
+**Pending reason:** npm account has 2FA enabled but the user cannot access the npm website (login redirects to 404). Must publish once the website is accessible and 2FA can be adjusted.
 
-## Immutable architecture rules
+**Temporary install workaround:**
+```bash
+npx github:erickguedes/coursesmith init meu-curso
+```
 
-These come from `Master_Prompt.md` and the architecture docs. Do not violate them:
+## GitHub
 
-- **Runtime never contains educational logic.** The Core only loads config, discovers plugins, resolves capabilities, executes pipelines, validates artifacts, and publishes output.
-- **Agents communicate only through Artifacts.** No direct agent-to-agent calls. No free-text exchange.
-- **Everything is a plugin.** Agents, skills, templates, pipelines, publishers, validators, parsers — all plugins.
-- **Pipelines are declarative YAML.** Never hardcode educational workflows.
-- **Everything is Git-native.** Markdown, JSON, YAML only. No proprietary formats, no binary artifacts.
-- **Runtime agnostic.** The framework must not depend on OpenCode, Claude Code, or any specific AI runtime. Adapters enable integration.
-- **Artifacts are immutable, versioned, and validated.** No in-place edits.
-- **Backward compatibility is mandatory.** Never replace existing concepts — propose compatible evolutions.
-
-## Coding philosophy
-
-Prefer: Composition > inheritance, Interfaces > concrete classes, Contracts > conventions, Schemas > assumptions, Plugins > modifications, Configuration > branching logic.
-
-## Style
-
-Professional technical English. Precise, implementation-oriented. Assume senior software engineer audience. Avoid marketing language and unnecessary explanations.
-
-## Adding new documentation
-
-Follow the order defined in `Master_Prompt.md`. Add new numbered docs when a concept is not covered by existing ones. Never duplicate. Never contradict. Always extend.
+Remote: `https://github.com/erickguedes/coursesmith`
 
 ## Key reference files
 
-- `Master_Prompt.md` — agent role, mission, doc order, rules
-- `docs/AI_IMPLEMENTATION_GUIDE.md` — implementation constitution
-- `docs/04-architecture.md` — system architecture and component boundaries
-- `docs/05-domain-model.md` — entity definitions and artifact lifecycle
-- `docs/06-agents.md` — agent contracts, lifecycle, and capability system
+| File | Purpose |
+|------|---------|
+| `Master_Prompt.md` | Agent role, mission, doc order, rules |
+| `README.md` | User-facing project overview and quickstart |
+| `docs/04-architecture.md` | System architecture and component boundaries |
+| `docs/05-domain-model.md` | Entity definitions and artifact lifecycle |
+| `docs/06-agents.md` | Agent contracts, lifecycle, and capability system |
+| `docs/AI_IMPLEMENTATION_GUIDE.md` | Implementation constitution |
+
+## Build commands
+
+```bash
+npm run build --workspaces     # Compile all packages
+npm run dev --workspaces       # Watch mode
+```

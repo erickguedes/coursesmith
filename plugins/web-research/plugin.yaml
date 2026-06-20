@@ -1,4 +1,4 @@
-name: "@coursesmith/web-research"
+name: "coursesmith-web-research"
 version: 1.0.0
 type: agent
 description: Web research agent that searches, scrapes, and enriches course content

@@ -1,6 +1,6 @@
 import * as path from 'path'
 import * as fs from 'fs/promises'
-import { loadConfig, loadPipelineDefinition, getOutputDir, PluginRegistry, CapabilityResolver, PipelineEngine, ArtifactBus, Artifact } from '@coursesmith/core'
+import { loadConfig, loadPipelineDefinition, getOutputDir, PluginRegistry, CapabilityResolver, PipelineEngine, ArtifactBus, Artifact } from 'coursesmith-core'
 import { discoverAndRegisterPlugins } from './plugin-loader.js'
 
 export async function runCommand(options: { pipeline?: string; output?: string; dryRun?: boolean }): Promise<void> {

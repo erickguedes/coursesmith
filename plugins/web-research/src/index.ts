@@ -1,7 +1,7 @@
-import { Artifact, Plugin } from '@coursesmith/core'
+import { Artifact, Plugin } from 'coursesmith-core'
 
 const manifest = {
-  name: '@coursesmith/web-research',
+  name: 'coursesmith-web-research',
   version: '1.0.0',
   type: 'agent',
   description: 'Web research agent that searches, scrapes, and enriches course content',
@@ -174,7 +174,7 @@ async function execute(
           type: 'research-material',
           version: '1.0.0',
           title: `Research: ${topicName}`,
-          createdBy: '@coursesmith/web-research',
+          createdBy: 'coursesmith-web-research',
           createdAt: now,
           schemaVersion: '1.0',
           data: {
@@ -209,7 +209,7 @@ async function execute(
           type: 'enriched-syllabus',
           version: '1.0.0',
           title: `Enriched: ${topicName}`,
-          createdBy: '@coursesmith/web-research',
+          createdBy: 'coursesmith-web-research',
           createdAt: now,
           schemaVersion: '1.0',
           data: {
@@ -240,7 +240,7 @@ async function execute(
           type: 'enriched-lesson',
           version: '1.0.0',
           title: `Enriched: ${topicName}`,
-          createdBy: '@coursesmith/web-research',
+          createdBy: 'coursesmith-web-research',
           createdAt: now,
           schemaVersion: '1.0',
           data: {

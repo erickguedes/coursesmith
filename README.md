@@ -5,11 +5,14 @@
 Transform syllabi, documentation, and source material into complete, structured courses through deterministic multi-agent orchestration with web enrichment.
 
 ```bash
-npx @coursesmith/cli init meu-curso
+npx coursesmith-cli init meu-curso
 cd meu-curso
 # Edite content/syllabus.md
-npx @coursesmith/cli run
+npx coursesmith-cli run
 ```
+
+> ⏳ Pacotes npm pendentes de publicação (2FA pendente). Funcionando localmente via GitHub:
+> `npx github:erickguedes/coursesmith init meu-curso`
 
 ## How it works
 
@@ -49,15 +52,17 @@ Você fornece (syllabus, PDF, ou só um tópico)
 
 | Comando | Descrição |
 |---------|-----------|
-| `coursesmith init` | Cria projeto com estrutura padrão |
-| `coursesmith run` | Executa o pipeline configurado |
-| `coursesmith run --dry-run` | Valida configuração sem executar |
-| `coursesmith run --pipeline quick-course` | Executa pipeline específico |
+| Comando | Descrição |
+|---------|-----------|
+| `npx coursesmith-cli init` | Cria projeto com estrutura padrão |
+| `npx coursesmith-cli run` | Executa o pipeline configurado |
+| `npx coursesmith-cli run --dry-run` | Valida configuração sem executar |
+| `npx coursesmith-cli run --pipeline quick-course` | Executa pipeline específico |
 
 ## Exemplo: Docker Deep Dive
 
 ```bash
-npx @coursesmith/cli init docker-curso
+npx coursesmith-cli init docker-curso
 ```
 
 Edite `content/syllabus.md` com os tópicos do seu curso:
@@ -73,7 +78,7 @@ Edite `content/syllabus.md` com os tópicos do seu curso:
 Execute:
 
 ```bash
-npx @coursesmith/cli run
+npx coursesmith-cli run
 ```
 
 Resultado em `./output/`:

@@ -1,6 +1,6 @@
 import * as fs from 'fs/promises'
 import * as path from 'path'
-import { PluginRegistry, Plugin, PluginManifest } from '@coursesmith/core'
+import { PluginRegistry, Plugin, PluginManifest } from 'coursesmith-core'
 import { createRequire } from 'module'
 
 const require = createRequire(import.meta.url)
@@ -20,11 +20,11 @@ export async function discoverAndRegisterPlugins(
   }
 
   const builtinNames = [
-    '@coursesmith/web-research',
-    '@coursesmith/teacher',
-    '@coursesmith/quiz-generator',
-    '@coursesmith/flashcard-generator',
-    '@coursesmith/publisher',
+    'coursesmith-web-research',
+    'coursesmith-teacher',
+    'coursesmith-quiz-generator',
+    'coursesmith-flashcard-generator',
+    'coursesmith-publisher',
   ]
 
   for (const name of builtinNames) {

@@ -1,7 +1,7 @@
-import { Artifact, Plugin } from '@coursesmith/core'
+import { Artifact, Plugin } from 'coursesmith-core'
 
 const manifest = {
-  name: '@coursesmith/quiz-generator',
+  name: 'coursesmith-quiz-generator',
   version: '1.0.0',
   type: 'agent',
   description: 'Generates quiz questions from lesson content',
@@ -41,7 +41,7 @@ async function execute(
           type: 'quiz',
           version: '1.0.0',
           title: `Quiz: ${topic}`,
-          createdBy: '@coursesmith/quiz-generator',
+          createdBy: 'coursesmith-quiz-generator',
           createdAt: now,
           schemaVersion: '1.0',
           data: {

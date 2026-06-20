@@ -1,14 +1,26 @@
 {
-  "name": "@coursesmith/teacher",
+  "name": "coursesmith-teacher",
   "version": "1.0.0",
   "type": "module",
   "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/erickguedes/coursesmith.git"
+  },
+  "license": "Apache-2.0",
   "scripts": {
     "build": "tsc",
+    "prepublishOnly": "npm run build",
     "dev": "tsc --watch"
   },
   "dependencies": {
-    "@coursesmith/core": "^1.0.0"
+    "coursesmith-core": "^1.0.0"
   },
   "devDependencies": {
     "typescript": "^5.7.0"

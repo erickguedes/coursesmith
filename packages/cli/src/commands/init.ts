@@ -40,11 +40,11 @@ output:
   format: markdown
 
 plugins:
-  - "@coursesmith/web-research"
-  - "@coursesmith/teacher"
-  - "@coursesmith/quiz-generator"
-  - "@coursesmith/flashcard-generator"
-  - "@coursesmith/publisher"
+  - "coursesmith-web-research"
+  - "coursesmith-teacher"
+  - "coursesmith-quiz-generator"
+  - "coursesmith-flashcard-generator"
+  - "coursesmith-publisher"
 `
 
   fs.writeFileSync(path.join(dir, 'coursesmith.yaml'), configYaml)

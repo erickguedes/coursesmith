@@ -1,7 +1,7 @@
-import { Artifact, Plugin } from '@coursesmith/core'
+import { Artifact, Plugin } from 'coursesmith-core'
 
 const manifest = {
-  name: '@coursesmith/teacher',
+  name: 'coursesmith-teacher',
   version: '1.0.0',
   type: 'agent',
   description: 'Generates lesson content from lesson plans and course structures',
@@ -85,7 +85,7 @@ async function execute(
           type: 'course-structure',
           version: '1.0.0',
           title: 'Course Structure',
-          createdBy: '@coursesmith/teacher',
+          createdBy: 'coursesmith-teacher',
           createdAt: now,
           schemaVersion: '1.0',
           data: {
@@ -149,7 +149,7 @@ async function execute(
           type: 'lesson',
           version: '1.0.0',
           title: topic,
-          createdBy: '@coursesmith/teacher',
+          createdBy: 'coursesmith-teacher',
           createdAt: now,
           schemaVersion: '1.0',
           data: {

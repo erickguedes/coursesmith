@@ -1,7 +1,7 @@
-import { Artifact, Plugin } from '@coursesmith/core'
+import { Artifact, Plugin } from 'coursesmith-core'
 
 const manifest = {
-  name: '@coursesmith/flashcard-generator',
+  name: 'coursesmith-flashcard-generator',
   version: '1.0.0',
   type: 'agent',
   description: 'Generates flashcards from lesson content',
@@ -41,7 +41,7 @@ async function execute(
           type: 'flashcards',
           version: '1.0.0',
           title: `Flashcards: ${topic}`,
-          createdBy: '@coursesmith/flashcard-generator',
+          createdBy: 'coursesmith-flashcard-generator',
           createdAt: now,
           schemaVersion: '1.0',
           data: {

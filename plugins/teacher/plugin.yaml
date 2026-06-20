@@ -1,4 +1,4 @@
-name: "@coursesmith/teacher"
+name: "coursesmith-teacher"
 version: 1.0.0
 type: agent
 description: Generates lesson content from lesson plans and course structures

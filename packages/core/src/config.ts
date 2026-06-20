@@ -39,7 +39,7 @@ export function loadPipelineDefinition(dir: string, name: string): PipelineDefin
     path.join(__dirname, '..', 'pipelines', `${name}.yaml`),
     path.join(__dirname, '..', 'pipelines', `${name}.yml`),
     path.join(__dirname, '..', '..', 'pipelines', `${name}.yaml`),
-    path.join(dir, 'node_modules', '@coursesmith', 'core', 'pipelines', `${name}.yaml`),
+    path.join(dir, 'node_modules', 'coursesmith-core', 'core', 'pipelines', `${name}.yaml`),
   ]
   for (const filepath of builtinCandidates) {
     if (fs.existsSync(filepath)) {

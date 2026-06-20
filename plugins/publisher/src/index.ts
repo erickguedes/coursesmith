@@ -1,9 +1,9 @@
 import * as fs from 'fs'
 import * as path from 'path'
-import { Artifact, Plugin } from '@coursesmith/core'
+import { Artifact, Plugin } from 'coursesmith-core'
 
 const manifest = {
-  name: '@coursesmith/publisher',
+  name: 'coursesmith-publisher',
   version: '1.0.0',
   type: 'publisher',
   description: 'Publishes generated course artifacts to the filesystem',
@@ -132,7 +132,7 @@ async function execute(
           type: 'generated-course',
           version: '1.0.0',
           title: 'Generated Course',
-          createdBy: '@coursesmith/publisher',
+          createdBy: 'coursesmith-publisher',
           createdAt: now,
           schemaVersion: '1.0',
           data: courseManifest,

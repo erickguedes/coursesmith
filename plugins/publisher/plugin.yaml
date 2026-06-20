@@ -1,4 +1,4 @@
-name: "@coursesmith/publisher"
+name: "coursesmith-publisher"
 version: 1.0.0
 type: publisher
 description: Publishes generated course artifacts to the filesystem

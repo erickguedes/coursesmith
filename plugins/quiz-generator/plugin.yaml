@@ -1,4 +1,4 @@
-name: "@coursesmith/quiz-generator"
+name: "coursesmith-quiz-generator"
 version: 1.0.0
 type: agent
 description: Generates quiz questions from lesson content
