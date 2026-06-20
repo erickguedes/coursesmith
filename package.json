@@ -2,6 +2,10 @@
   "name": "coursesmith",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
+  "bin": {
+    "coursesmith": "bin/coursesmith.js"
+  },
   "workspaces": [
     "packages/core",
     "packages/cli",
